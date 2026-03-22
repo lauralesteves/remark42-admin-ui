@@ -1,0 +1,39 @@
+@import "../scss/icons.scss";
+@import "../scss/config/default/bootstrap.scss";
+@import "../scss/config/default/app.scss";
+@import "../scss/config/default/custom.scss";
+
+.offcanvas-header-dark {
+  .btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+  }
+}
+
+body {
+  * {
+    outline: none;
+  }
+}
+
+@each $color,
+$value in $theme-colors {
+  .simplebar-track-#{$color} {
+    .simplebar-scrollbar:before {
+      background: $value  !important;
+    }
+  }
+}
+
+.Toastify {
+  .Toastify__toast {
+    min-height: 43px;
+  }
+
+  .Toastify__close-button {
+    top: 6px;
+  }
+
+  .Toastify__close-button--light {
+    color: $light;
+  }
+}
