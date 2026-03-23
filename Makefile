@@ -7,4 +7,4 @@ build:
 	npx react-scripts build
 
 server:
-	npx react-scripts start
+	BROWSER=none npx react-scripts start
