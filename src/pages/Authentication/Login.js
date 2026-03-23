@@ -34,12 +34,12 @@ const Login = () => {
 
   const handleGoogleLogin = () => {
     const returnUrl = encodeURIComponent(window.location.origin + "/dashboard");
-    window.location.href = `${api.API_URL}/auth/google/login?from=${returnUrl}`;
+    window.location.href = `${api.API_URL}/auth/google/login?site=${api.SITE_ID}&from=${returnUrl}`;
   };
 
   const handleDevLogin = () => {
     const returnUrl = encodeURIComponent(window.location.origin + "/dashboard");
-    window.location.href = `${api.API_URL}/auth/dev/login?from=${returnUrl}`;
+    window.location.href = `${api.API_URL}/auth/dev/login?site=${api.SITE_ID}&from=${returnUrl}`;
   };
 
   document.title = "Sign In | Remark42 Admin";

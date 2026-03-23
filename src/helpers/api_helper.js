@@ -1,9 +1,22 @@
 import axios from "axios";
 import { api } from "../config";
 
-axios.defaults.baseURL = api.API_URL;
+// Empty baseURL = relative paths. In dev, CRA proxy forwards to Remark42.
+// In production, the admin UI and API share the same domain.
+axios.defaults.baseURL = "";
 axios.defaults.headers.post["Content-Type"] = "application/json";
 axios.defaults.withCredentials = true;
+
+// Remark42 requires the XSRF-TOKEN cookie value sent as X-XSRF-TOKEN header
+axios.interceptors.request.use(function (config) {
+  const xsrf = document.cookie
+    .split("; ")
+    .find((c) => c.startsWith("XSRF-TOKEN="));
+  if (xsrf) {
+    config.headers["X-XSRF-TOKEN"] = xsrf.split("=")[1];
+  }
+  return config;
+});
 
 axios.interceptors.response.use(
   function (response) {
