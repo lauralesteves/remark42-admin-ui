@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { api } from "../../config";
 
 export const initialState = {
   user: null,
@@ -6,6 +7,7 @@ export const initialState = {
   error: null,
   isAdmin: false,
   isUserLogout: false,
+  siteId: api.SITE_ID,
 };
 
 const authSlice = createSlice({
@@ -35,10 +37,13 @@ const authSlice = createSlice({
       state.loading = false;
       state.isUserLogout = true;
     },
+    changeSiteId(state, action) {
+      state.siteId = action.payload;
+    },
   },
 });
 
-export const { authPending, authSuccess, authError, logoutSuccess } =
+export const { authPending, authSuccess, authError, logoutSuccess, changeSiteId } =
   authSlice.actions;
 
 export default authSlice.reducer;
