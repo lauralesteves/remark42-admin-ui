@@ -8,7 +8,6 @@ import logoLight from "../assets/images/logo-light.png";
 import FullScreenDropdown from "../Components/Common/FullScreenDropdown";
 import ProfileDropdown from "../Components/Common/ProfileDropdown";
 import LightDark from "../Components/Common/LightDark";
-import SiteSelector from "../Components/Common/SiteSelector";
 
 import { changeSidebarVisibility } from "../slices/layouts/thunk";
 import { useSelector, useDispatch } from "react-redux";
@@ -90,7 +89,6 @@ const Header = ({ onChangeLayoutMode, layoutModeType, headerClass }) => {
           </div>
 
           <div className="d-flex align-items-center">
-            <SiteSelector />
             <FullScreenDropdown />
             <LightDark
               layoutMode={layoutModeType}
