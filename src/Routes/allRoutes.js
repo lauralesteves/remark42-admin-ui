@@ -6,10 +6,12 @@ import Logout from "../pages/Authentication/Logout";
 import AccessDenied from "../pages/Authentication/AccessDenied";
 import Dashboard from "../pages/Dashboard";
 import PostsList from "../pages/Posts/PostsList";
+import PostComments from "../pages/Posts/PostComments";
 
 const authProtectedRoutes = [
   { path: "/dashboard", component: <Dashboard /> },
   { path: "/posts", component: <PostsList /> },
+  { path: "/posts/:url", component: <PostComments /> },
 
   // Catch all — redirect to dashboard
   { path: "/", exact: true, component: <Navigate to="/dashboard" /> },
