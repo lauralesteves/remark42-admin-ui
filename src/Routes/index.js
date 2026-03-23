@@ -1,6 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import NonAuthLayout from "../Layouts/NonAuthLayout";
+import VerticalLayout from "../Layouts/index";
 import { authProtectedRoutes, publicRoutes } from "./allRoutes";
 import { AuthProtected } from "./AuthProtected";
 
@@ -20,7 +21,11 @@ const AppRoutes = () => {
         {authProtectedRoutes.map((route, idx) => (
           <Route
             path={route.path}
-            element={<AuthProtected>{route.component}</AuthProtected>}
+            element={
+              <AuthProtected>
+                <VerticalLayout>{route.component}</VerticalLayout>
+              </AuthProtected>
+            }
             key={idx}
           />
         ))}
