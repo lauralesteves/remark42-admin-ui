@@ -30,6 +30,21 @@ export const getComment = (site, id) =>
 export const getCommentCount = (site, postUrl) =>
   api.get(url.GET_COMMENT_COUNT, { site, url: postUrl });
 
+export const createComment = (site, postUrl, text, parentId) => {
+  const body = {
+    text,
+    locator: { site, url: postUrl },
+  };
+  if (parentId) body.pid = parentId;
+  return api.create(url.POST_COMMENT, body);
+};
+
+export const previewComment = (site, postUrl, text) =>
+  api.create(url.POST_PREVIEW, {
+    text,
+    locator: { site, url: postUrl },
+  });
+
 export const getCommentCounts = (site, urls) =>
   api.create(`${url.POST_COMMENT_COUNTS}?site=${encodeURIComponent(site)}`, urls);
 
