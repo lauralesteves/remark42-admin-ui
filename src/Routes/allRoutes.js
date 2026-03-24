@@ -10,6 +10,7 @@ import PostComments from "../pages/Posts/PostComments";
 import UserDetail from "../pages/Users/UserDetail";
 import BlockedUsers from "../pages/Users/BlockedUsers";
 import RecentComments from "../pages/Comments/RecentComments";
+import SiteSettings from "../pages/Settings/SiteSettings";
 
 const authProtectedRoutes = [
   { path: "/dashboard", component: <Dashboard /> },
@@ -18,6 +19,7 @@ const authProtectedRoutes = [
   { path: "/comments", component: <RecentComments /> },
   { path: "/users", component: <BlockedUsers /> },
   { path: "/users/:userId", component: <UserDetail /> },
+  { path: "/settings", component: <SiteSettings /> },
 
   // Catch all — redirect to dashboard
   { path: "/", exact: true, component: <Navigate to="/dashboard" /> },
