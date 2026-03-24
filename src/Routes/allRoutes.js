@@ -8,6 +8,7 @@ import Dashboard from "../pages/Dashboard";
 import PostsList from "../pages/Posts/PostsList";
 import PostComments from "../pages/Posts/PostComments";
 import UserDetail from "../pages/Users/UserDetail";
+import BlockedUsers from "../pages/Users/BlockedUsers";
 import RecentComments from "../pages/Comments/RecentComments";
 
 const authProtectedRoutes = [
@@ -15,6 +16,7 @@ const authProtectedRoutes = [
   { path: "/posts", component: <PostsList /> },
   { path: "/posts/:url", component: <PostComments /> },
   { path: "/comments", component: <RecentComments /> },
+  { path: "/users", component: <BlockedUsers /> },
   { path: "/users/:userId", component: <UserDetail /> },
 
   // Catch all — redirect to dashboard
