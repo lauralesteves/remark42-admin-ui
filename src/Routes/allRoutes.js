@@ -11,6 +11,7 @@ import UserDetail from "../pages/Users/UserDetail";
 import BlockedUsers from "../pages/Users/BlockedUsers";
 import RecentComments from "../pages/Comments/RecentComments";
 import SiteSettings from "../pages/Settings/SiteSettings";
+import DataManagement from "../pages/Settings/DataManagement";
 
 const authProtectedRoutes = [
   { path: "/dashboard", component: <Dashboard /> },
@@ -20,6 +21,7 @@ const authProtectedRoutes = [
   { path: "/users", component: <BlockedUsers /> },
   { path: "/users/:userId", component: <UserDetail /> },
   { path: "/settings", component: <SiteSettings /> },
+  { path: "/settings/data", component: <DataManagement /> },
 
   // Catch all — redirect to dashboard
   { path: "/", exact: true, component: <Navigate to="/dashboard" /> },
