@@ -12,9 +12,11 @@ import BlockedUsers from "../pages/Users/BlockedUsers";
 import RecentComments from "../pages/Comments/RecentComments";
 import SiteSettings from "../pages/Settings/SiteSettings";
 import DataManagement from "../pages/Settings/DataManagement";
+import Demo from "../pages/Demo";
 
 const authProtectedRoutes = [
   { path: "/dashboard", component: <Dashboard /> },
+  { path: "/demo", component: <Demo /> },
   { path: "/posts", component: <PostsList /> },
   { path: "/posts/:url", component: <PostComments /> },
   { path: "/comments", component: <RecentComments /> },

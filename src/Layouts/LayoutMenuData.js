@@ -39,6 +39,16 @@ const Navdata = () => {
       },
     },
     {
+      id: "demo",
+      label: "Demo",
+      icon: "ri-slideshow-3-line",
+      link: "/demo",
+      click: function (e) {
+        setIscurrentState("Demo");
+        updateIconSidebar(e);
+      },
+    },
+    {
       id: "posts",
       label: "Posts",
       icon: "ri-article-line",
