@@ -11,6 +11,8 @@ export const GET_USER_COMMENTS = "/api/v1/comments";
 export const GET_COMMENT = "/api/v1/id";
 export const GET_COMMENT_COUNT = "/api/v1/count";
 export const POST_COMMENT_COUNTS = "/api/v1/counts";
+export const POST_COMMENT = "/api/v1/comment";
+export const POST_PREVIEW = "/api/v1/preview";
 
 // Posts
 export const GET_POSTS_LIST = "/api/v1/list";
