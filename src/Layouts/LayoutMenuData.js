@@ -78,6 +78,16 @@ const Navdata = () => {
         updateIconSidebar(e);
       },
     },
+    {
+      id: "data",
+      label: "Data",
+      icon: "ri-database-2-line",
+      link: "/settings/data",
+      click: function (e) {
+        setIscurrentState("Data");
+        updateIconSidebar(e);
+      },
+    },
   ];
 
   return <React.Fragment>{menuItems}</React.Fragment>;
