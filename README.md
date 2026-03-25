@@ -48,7 +48,15 @@ make server
 
 Open `http://127.0.0.1:3000` (not `localhost` — the dev OAuth cookie is bound to `127.0.0.1`).
 
-### 3. Authenticate
+### 3. Unblock the dev user (first time only)
+
+If `dev_user` was previously blocked, unblock it before logging in:
+
+```bash
+curl -u admin:password -X PUT "http://127.0.0.1:8080/api/v1/admin/user/dev_user?site=remark&block=0"
+```
+
+### 4. Authenticate
 
 1. Click **"Dev Login (local only)"**
 2. Log in as any user on the dev OAuth page — `dev_user` is auto-admin
